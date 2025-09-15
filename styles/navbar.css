@@ -1,0 +1,243 @@
+
+
+
+
+/* -----------------------------------------HEADER--------------------------------------------*/
+
+.header{
+  /* position: relative;  */
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.3rem 10%;
+  z-index: 100;
+  max-height: 70px;
+  background-color: #598553;
+}
+
+
+.header::before{
+  content: '';
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #598553;
+  /* background: rgba(255, 255, 255, 0.05);  */
+  backdrop-filter: blur(50px);
+  z-index: -1;
+}
+
+
+
+.hello{
+  min-width: 200px;
+  height: 100px;
+  margin: 0 auto; /* Add this line to center the div horizontally */
+  display: flex;
+  justify-content: center;
+
+
+}
+
+.header:hover::after{
+  left: 100%;
+}
+
+/*logo en tekst in de navbar*/
+
+
+
+/* -----------------------------------------NAVBAR--------------------------------------------*/
+
+nav.navbar{
+}
+
+.navbar{
+  left: 25%;
+  width: 450px;
+}
+ 
+.navbar a{
+  font-size: 1.15rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 2.5rem;
+  transition: border-color .5s ease; /* Voeg een overgang toe met een langzamere snelheid */
+  border-bottom: 2px solid transparent; /* Standaard geen border */
+}
+
+.navbar a:hover {
+  border-bottom: 2px solid white;/* Voeg een border toe wanneer de muis over de link gaat */
+  transition: .3s ease;  
+}
+
+#check{
+  display: none;
+}
+
+
+.icons{
+  position: absolute;
+  right: 15%;
+  font-size: 2.8rem;
+  color: white;
+  cursor: pointer;
+  display: none;
+
+}
+
+
+
+
+
+#menu-icon{
+  margin-top: 5px;
+}
+
+#close-icon{
+  margin-top: 5px;
+
+}
+
+
+
+
+
+
+.itemWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto 1500;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------------------📱MEDIA QUERRY'S📱-----------------------------*/
+
+@media (min-width: 992px ) /*for laptop and higher*/ {
+ .header{
+    display: none;
+  }
+}
+
+@media (max-width: 992px ) /* for tablet*/ {
+  
+  /* ------------- HEADER TABLET -------------*/
+  .header{
+    padding: 1.3rem 5%;
+  }
+  .navbar a {   
+    border-bottom: none; 
+  }
+
+}
+
+
+@media (max-width: 864px )/* for mobile*/ {
+
+  /* ------------- NAVBAR MOBILE -------------*/
+
+  .header{
+    position: fixed;
+    max-height: 55px;
+
+  }
+
+  .icons{
+    display: inline-flex;
+    top: 0;
+  }
+  
+  #check:checked~.icons #menu-icon {
+    display: none;
+  }
+  
+    .icons #close-icon{
+      display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+      display: block;
+    }
+
+    .navbar{
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background: rgba(89, 133, 83, 0.35); /*kleur van de backdrop menu op mobile*/
+      backdrop-filter: blur(50px);
+      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .10); /*.1 is een achtergrond*/
+      overflow: hidden;
+      transition: .3s ease; /*aanpassen hoe lang de animatie duurt*/
+      max-height: 225px;
+    }
+
+    
+    
+    #check:checked~.navbar {
+      height: 17.7rem;
+    }
+
+    .navbar a {
+      display: block;
+      font-size: 1.1rem;
+      margin: 1.5rem 0;
+      text-align: center;
+      transform: translateY(-50px);
+      opacity: 0;
+      transition: .3s ease;    
+      border-bottom: none;
+      margin-right: 45px;
+    }
+
+    #check:checked~.navbar a{
+      transform: translateY(0);
+      opacity: 1;
+      transition-delay: calc(.15s * var(--i));
+    }
+
+    .markedPage{
+      border-bottom: none;
+      background: none;
+      border: none;
+      border-radius: none;
+      padding: none;    
+      border-bottom: none !important;
+    }
+
+    nav.navbar a {
+      background: none;
+      border: none !important;
+
+    }
+
+
+
+}

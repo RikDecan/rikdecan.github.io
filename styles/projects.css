@@ -1,0 +1,242 @@
+
+.projects{
+
+    height: 1000px;
+    /* background-color: #333; */
+
+}
+
+.projects h1 {
+    text-align: center;
+  }
+
+
+  .githubWrapper {
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+  }
+
+  .item {
+    display: block;
+    
+}
+/* 
+.item {
+    display: none;
+    
+} */
+
+/*👆dit deselecteren als je wil dat ze verborgen zijn bij het inlezen van de pagina👆*/
+
+
+
+  .filter-buttons {
+    text-align: center;
+    margin-bottom: 20px; /* Add some spacing between buttons and other content */
+  }
+  
+  .filter-buttons button {
+    font-size: 19px;
+    color: #eeede4;
+    text-decoration: 2px underline;
+    padding: 8px 16px;
+    margin: 0 5px; /* Adjust the margin as needed */
+    border: 0px solid #ccc;
+    background-color: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .filter-buttons button:hover {
+    color: #598553;
+  }
+
+
+.nonFeatured figure{
+display: none;
+}
+
+.nonFeatured{
+  max-height: 285px;
+}
+
+
+
+
+  .article22 {
+    --img-scale: 1.001;
+    --title-color: #eeede4;
+    --link-icon-translate: -20px;
+    --link-icon-opacity: 0;
+    position: relative;
+    border-radius: 16px;
+
+    box-shadow: none;background: rgb(55,158,58);
+    background: linear-gradient(235deg, rgba(55,158,58,0.7) 0%, rgba(46,115,61,0.7) 27%, rgba(41,88,63,0.7) 72%, rgba(66,91,71,0.7) 100%);
+
+    /* background-image: url(/sources/images/jeans.jpg);
+    background-size: cover;
+    background-position: center; */
+
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+  }
+  
+  .article22 a::after {
+    position: absolute;
+    inset-block: 0;
+    inset-inline: 0;
+    cursor: pointer;
+    content: "";
+  }
+  
+  /* basic article elements styling */
+  .article22 h2 {
+    margin: 0 0 18px 0;
+    font-family: "Bebas Neue", cursive;
+    font-size: 1.9rem;
+    letter-spacing: 0.06em;
+    color: var(--title-color);
+    transition: color 0.3s ease-out;
+  }
+  
+  figure {
+    margin: 0;
+    padding: 0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+  
+  .article22 img {
+    max-width: 100%;
+    transform-origin: center;
+    transform: scale(var(--img-scale));
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .article-body {
+    padding: 24px;
+  }
+  
+  .article22 a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #eeede4;
+  }
+  
+  .article22 a:focus {
+    outline: 1px dotted #eeede4;
+  }
+  
+  .article22 a .icon {
+    min-width: 24px;
+    width: 24px;
+    height: 24px;
+    margin-left: 5px;
+    transform: translateX(var(--link-icon-translate));
+    opacity: var(--link-icon-opacity);
+    transition: all 0.3s;
+  }
+  
+  /* using the has() relational pseudo selector to update our custom properties */
+  .article22:has(:hover, :focus) {
+    --img-scale: 1.1;
+    --title-color: #eeede4;
+    --link-icon-translate: 0;
+    --link-icon-opacity: 1;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  }
+
+  .article22:hover{
+      transform: translateY(-8px);
+
+      background: linear-gradient(235deg, rgba(55,158,58,0.35) 0%, rgba(46,115,61,0.35) 27%, rgba(41,88,63,0.35) 72%, rgba(66,91,71,0.35) 100%);
+      transition: all 0.3s;
+      
+      -webkit-box-shadow: 0px 10px 0px 0px rgba(64,163,39,0.5);
+      -moz-box-shadow: 0px 10px 0px 0px rgba(64,163,39,0.5);
+      box-shadow: 0px 10px 0px 0px rgba(64,163,39,0.2);
+  }
+  
+  
+  /************************ 
+  Generic layout (demo looks)
+  **************************/
+  
+
+  
+  .articles {
+    display: grid;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    /* background-color: blueviolet; */
+  }
+  
+  @media screen and (max-width: 960px) {
+    .article22 {
+      container: card/inline-size;
+      position: relative;
+    
+    }
+    figure{
+      display: none;
+    }
+    .article-body p {
+      display: none;
+      font-size: 12px ;
+    }
+
+    .article22 img{
+      display: none;
+    }
+    
+    .filter-buttons button {
+      font-size: 15px;
+      color: #eeede4;
+      text-decoration: 1px underline;
+      padding: 8px 16px;
+      margin: 0 5px; /* Adjust the margin as needed */
+      border: 0px solid #ccc;
+      background-color: transparent;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+  
+  }
+  
+  @container card (min-width: 380px) {
+    .article-wrapper {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 16px;
+    }
+    .article-body {
+      padding-left: 0;
+    }
+    figure {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    figure img {
+      height: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+  }
+  
+  .sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+  }

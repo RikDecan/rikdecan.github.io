@@ -1,0 +1,213 @@
+
+
+.intro{
+    margin-top: 25px;
+    margin-bottom: 25px;
+ 
+  }
+
+  .intro h1 {
+    text-align: center;
+  }
+
+.wrapperIntro{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 25px;
+  margin: 0px 175px 0px 175px;
+  background: rgb(34,34,34);
+  background: linear-gradient(122deg, rgba(34,34,34,0.5) 0%, rgba(108, 158, 144, 0.3) 25%, rgba(67,105,94, 0.3) 75%, rgba(34,34,34,0.5) 100%);
+}
+#myPicture{
+  margin-top: 15px;
+  border-radius: 50%;
+  height: 300px; 
+  width: auto;
+  background-color: #598553;
+  border: 6px solid #eeede4 ;
+  transition: background-color 0.25s ease-in-out; 
+
+}
+
+#myPicture:hover, #myPicture:active{
+  background-color: rgba(210, 105, 30, 1);
+  -webkit-box-shadow: -1px 22px 82px 12px rgba(255,255,255,0.28);
+  -moz-box-shadow: -1px 22px 82px 12px rgba(255,255,255,0.28);
+  box-shadow: -1px 22px 82px 12px rgba(255,255,255,0.28);
+}
+
+.introText{
+
+  margin-left: 25px;
+  border-radius: 35px;
+  /* background-color: #43695e; */
+  width: 40%;
+  padding: 25px;
+}
+
+#aboutTitle{
+  margin: auto ;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .wrapperIntro {
+      flex-direction: column;
+  }
+}
+
+/* -#-    SKILLS   -#- */
+
+
+progress {
+  width: 200px;
+  height: 20px;
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  border-radius: 10px;
+  background-color: #ddd;
+  
+}
+
+/* Styling the progress bar inside the progress element */
+progress::-webkit-progress-bar {
+  border-radius: 10px;
+  background-color: #ddd;
+}
+
+/* Styling the progress bar fill inside the progress element */
+progress::-webkit-progress-value {
+  border-radius: 10px;
+  background-color: #598553; 
+}
+
+/* Styling the progress bar fill inside the progress element for Firefox */
+progress::-moz-progress-bar {
+  border-radius: 10px;
+  background-color: #598553; /* Change to the desired progress bar color */
+}
+
+
+.progWrapper img{
+  height: 40px; 
+  width: auto;
+  margin-right: 25px; /* Adjust the margin as needed */
+
+}
+
+.wrapperSkills{
+  margin-left: 25px;
+  border-radius: 35px;
+  /* background-color: #43695e; */
+  width: 40%;
+  padding: 25px;
+
+
+}
+.progWrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 35px;
+  position: relative;
+
+}
+
+
+.progressValue {
+  margin-left: 10px; /* Adjust the margin as needed */
+  color: #eeede4;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+
+
+.skill.showSkill {
+  display: block;
+  /* Andere stijlen voor de kaart */
+}
+
+.skill.hideSkill {
+  display: none;
+}
+
+
+.filter-buttonsForSkills button{ 
+  font-size: 19px;
+  color: #eeede4;
+  padding: 8px 16px;
+  margin: 20px 5px; /* Adjust the margin as needed */
+  border: 1px solid white;
+  background-color: #598553;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+
+.filter-buttonsForSkills button:hover{
+  background-color: #be7643;
+}
+
+.skill h3{
+  color: #be7643;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+.introText{
+  width: 90%;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.wrapperIntro{
+  background: rgb(34,34,34);
+  background: linear-gradient(180deg, rgba(34,34,34,0.5) 0%,rgba(108, 158, 144, 0.3) 25%, rgba(67,105,94, 0.3) 75%, rgba(34,34,34,0.5) 100%);
+  margin: 0px 25px 0px 25px;
+
+}
+
+.filter-buttonsForSkills button{ 
+  font-size: 12px;}
+
+  .intro h1 {
+    text-align: center;
+    margin-right: 45px;    
+  }
+
+#myPicture{
+  border-radius: 50%;
+  height: 150px; 
+  width: auto;
+  display: block;
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+.introText h2{
+  font-size: 22px ;
+}
+.introText p{
+  font-size: 16px ;
+}
+.wrapperSkills{
+  border-radius: 35px;
+  width: 90%;
+  display: block;
+  margin: 0 auto; /* Center the image horizontally */
+}
+}
+
+/* Media query for even smaller screens */
+@media only screen and (max-width: 480px) {
+
+}
+
+@media only screen and (min-width: 750px) {
+.introText p{
+  text-align: justify;
+  text-justify: inter-word;
+}
+}

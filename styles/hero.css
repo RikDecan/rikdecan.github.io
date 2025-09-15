@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* -#-     Moving Background       -#- */
+
+.wrapper {
+    animation: scroll 100s linear infinite;
+    /* background: url("https://images.unsplash.com/photo-1635368276498-10387ddeac8a?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+      #111111; 
+       */
+
+    color: #eee;
+    height: 90vh;
+    min-width: 360px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+  }
+  
+  @keyframes scroll {
+    100% {
+      background-position: 900px 400%;
+    }
+  }
+  
+  /* Fallback if the operatring system prefers reduced motion*/
+  @media (prefers-reduced-motion) {
+    .wrapper {
+      animation: scroll 800s linear infinite;
+    }
+  }
+
+
+/* -#-          [END]             -#- */
+
+
+
+
+
+
+
+
+
+
+/* -#-  ⌨️     Typewriter Effect     ⌨️  -#- */
+
+
+.wrapper1 {
+  /* Center the content horizontally and vertically */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Maintain full viewport height */
+}
+
+.wrapper1 h1{
+  user-select: none;
+
+}
+  
+    @keyframes typing {
+  
+      /*interval 1,1396*/
+  
+      0.0000%, 63.5870% { content: ""; }
+      1.1395%, 62.4474% { content: "F"; }
+      2.2791%, 61.3078% { content: "Fu"; }
+      3.4186%, 60.1682% { content: "Ful"; }
+      4.5581%, 59.0286% { content: "Full"; }
+      5.6977%, 57.8891% { content: "Full-"; }
+      6.8372%, 56.7495% { content: "Full-s"; }
+      7.9767%, 55.6099% { content: "Full-st"; }
+      9.1163%, 54.4704% { content: "Full-sta"; }
+      10.2558%, 53.3308% { content: "Full-stac"; }
+      11.3953%, 52.1913% { content: "Full-stack"; }
+      12.5348%, 51.0517% { content: "Full-stack "; }
+      13.6743%, 49.9122% { content: "Full-stack d"; }
+      14.8138%, 48.7726% { content: "Full-stack de"; }
+      15.9534%, 47.6331% { content: "Full-stack dev"; }
+      17.0929%, 46.493%  { content: "Full-stack deve"; }
+      18.2324%, 45.3540% { content: "Full-stack devel"; }
+      19.3719%, 44.2144% { content: "Full-stack develo"; }
+      20.5114%, 43.0749% { content: "Full-stack develop"; }
+      21.6509%, 41.9353% { content: "Full-stack develope"; }
+      22.7904%, 40.7958% { content: "Full-stack developer"; }
+  
+  
+      65.2950%, 94.0261% { content: ""; } 
+      66.4319%, 92.8865% { content: "S"; }
+      67.5688%, 91.7469% { content: "Sy"; }
+      68.7057%, 90.6073% { content: "Sys"; }
+      69.8426%, 89.4677% { content: "Syst"; }
+      70.9795%, 88.3281% { content: "Syste"; }
+      72.1164%, 87.1885% { content: "System"; }
+      73.2533%, 86.0489% { content: "System "; }
+      74.3902%, 84.9093% { content: "System A"; }
+      75.5298%, 83.7697% { content: "System Ad"; }
+      76.6694%, 82.6301% { content: "System Adm"; }
+      77.809%, 81.4905%  { content: "System Admi"; }
+      78.9486%, 80.3509% { content: "System Admin"; }
+
+
+    }
+    
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    
+    .typewriter {
+      --caret: currentcolor;
+      font-family: "Courier Prime", monospace;
+      font-weight: 400;
+      font-style: normal;
+    }
+    
+    .typewriter::before {
+      content: "";
+      animation: typing 13.5s infinite;
+    }
+    
+    .typewriter::after {
+      content: "";
+      border-right: 1px solid var(--caret);
+      animation: blink 0.5s linear infinite;
+    }
+    
+    .typewriter.thick::after {
+      border-right: 1ch solid var(--caret);
+    }
+    
+    .typewriter.nocaret::after {
+      border-right: 0;
+    }
+    
+    
+    @media (prefers-reduced-motion) {
+      .typewriter::after {
+        animation: none;
+      }
+      
+  
+    
+      .typewriter::before {
+        content: "developer";
+        animation: sequencePopup 12s linear infinite;
+      }
+    }
+    
+
+
+/* -#-          [END]             -#- */

@@ -1,0 +1,41 @@
+.reachOutWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 15px 55px 55px 55px;
+}
+
+.textAndCarousel{
+    width: 600px;
+    margin-right: 50px;
+
+
+}
+
+.textAndCarousel article{
+    width: 500px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+
+}
+
+
+.textAndCarousel article p{
+    font-size: 20px;
+}
+
+
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+    .textAndCarousel article p{
+        font-size: 16px;           
+    } 
+    .textAndCarousel article{
+        align-items: center;
+        justify-content: center;
+        width: 400px;
+        margin-left: 50px ;
+        padding: 25px;
+    }
+}

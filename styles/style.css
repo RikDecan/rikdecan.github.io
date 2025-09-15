@@ -1,0 +1,124 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+
+ font-family: "Jost", sans-serif;
+ font-optical-sizing: auto;
+ font-weight: 200;
+ font-style: normal;
+
+  --dot-bg: #222;
+  --dot-color: #eeede4;
+  --dot-size: 1px;
+  --dot-space: 20px;
+  background:
+    linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+    linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+    var(--dot-color);
+
+    
+    /* animation: scroll 500s linear infinite; */
+  /* background-image: url(/sources/images/wavey-fingerprint.svg); */
+  }
+
+
+
+
+
+p{
+  color: #eeede4;
+  font-weight: 500;
+  font-size: 2vmin;
+  
+}
+
+  h1 {
+    font-size: 8vmin;
+    color:#eeede4;
+    text-align: left;
+
+    font-weight: 700;
+    margin: 1rem 0 1rem 2rem;
+    
+  }
+
+  h2{
+    font-size: 4vmin;
+    color:#eeede4;
+
+
+    font-weight: 700;
+  }
+  
+  h3{
+    color:#eeede4;
+
+  }
+
+  
+
+
+
+  /* -#           🖱️CURSOR🖱️              #-  */
+
+.cursor-dot,
+.cursor-dot-outline {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #eeede4;
+
+
+
+  /*verrander dit als je klaar bent met alles*/
+  display: none;
+
+}
+
+
+
+
+  /*verrander dit als je klaar bent met alles*/
+
+
+/*  
+  html *,
+  body * {
+    cursor: none;
+  }
+   */
+
+
+
+.cursor-dot-outline {
+  width: 40px;
+  height: 40px;
+  /* background-color: rgba(238, 237, 228, 0.5);  */
+  border: 2px solid rgba(238, 237, 228, 0.5);
+
+
+  /*verrander dit als je klaar bent met alles*/
+  display: none;
+
+}
+
+
+.ghThumbNail{
+  display: hidden;
+}
