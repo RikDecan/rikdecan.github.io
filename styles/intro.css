@@ -1,13 +1,14 @@
 
 
 .intro{
-    margin-top: 25px;
-    margin-bottom: 25px;
- 
+    padding: 4rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .intro h1 {
     text-align: center;
+    margin-bottom: 3rem;
   }
 
 .wrapperIntro{
@@ -15,36 +16,44 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  border-radius: 25px;
-  margin: 0px 175px 0px 175px;
-  background: rgb(34,34,34);
-  background: linear-gradient(122deg, rgba(34,34,34,0.5) 0%, rgba(108, 158, 144, 0.3) 25%, rgba(67,105,94, 0.3) 75%, rgba(34,34,34,0.5) 100%);
+  border-radius: 24px;
+  margin: 0 2rem;
+  padding: 3rem;
+  background: rgba(50, 140, 193, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(50, 140, 193, 0.2);
+  box-shadow: 0 25px 50px -12px rgba(50, 140, 193, 0.1);
 }
 #myPicture{
-  margin-top: 15px;
   border-radius: 50%;
-  height: 300px; 
-  width: auto;
-  background-color: #598553;
-  border: 6px solid #eeede4 ;
-  transition: background-color 0.25s ease-in-out; 
-
+  height: 280px; 
+  width: 280px;
+  object-fit: cover;
+  border: 4px solid var(--accent-color);
+  transition: all 0.3s ease;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-#myPicture:hover, #myPicture:active{
-  background-color: rgba(210, 105, 30, 1);
-  -webkit-box-shadow: -1px 22px 82px 12px rgba(255,255,255,0.28);
-  -moz-box-shadow: -1px 22px 82px 12px rgba(255,255,255,0.28);
-  box-shadow: -1px 22px 82px 12px rgba(255,255,255,0.28);
+#myPicture:hover{
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .introText{
+  margin-left: 2rem;
+  width: 45%;
+  padding: 0;
+}
 
-  margin-left: 25px;
-  border-radius: 35px;
-  /* background-color: #43695e; */
-  width: 40%;
-  padding: 25px;
+.introText h2{
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.introText p{
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
 #aboutTitle{
@@ -62,32 +71,44 @@
 
 
 progress {
-  width: 200px;
-  height: 20px;
+  width: 220px;
+  height: 8px;
   appearance: none;
   -webkit-appearance: none;
   border: none;
-  border-radius: 10px;
-  background-color: #ddd;
-  
+  border-radius: 6px;
+  background-color: rgba(72, 216, 213, 0.2);
 }
 
 /* Styling the progress bar inside the progress element */
 progress::-webkit-progress-bar {
-  border-radius: 10px;
-  background-color: #ddd;
+  border-radius: 6px;
+  background-color: rgba(72, 216, 213, 0.2);
 }
 
 /* Styling the progress bar fill inside the progress element */
 progress::-webkit-progress-value {
-  border-radius: 10px;
-  background-color: #598553; 
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--accent-color), var(--secondary-accent));
 }
 
 /* Styling the progress bar fill inside the progress element for Firefox */
 progress::-moz-progress-bar {
-  border-radius: 10px;
-  background-color: #598553; /* Change to the desired progress bar color */
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--accent-color), var(--secondary-accent));
+}
+
+/* Different colors for different skill categories */
+.skill[data-category="frontEnd"] progress::-webkit-progress-value {
+  background: linear-gradient(90deg, var(--accent-color), #60a5fa);
+}
+
+.skill[data-category="backEnd"] progress::-webkit-progress-value {
+  background: linear-gradient(90deg, var(--secondary-accent), #34d399);
+}
+
+.skill[data-category="tools"] progress::-webkit-progress-value {
+  background: linear-gradient(90deg, var(--tertiary-accent), #fbbf24);
 }
 
 
@@ -99,13 +120,9 @@ progress::-moz-progress-bar {
 }
 
 .wrapperSkills{
-  margin-left: 25px;
-  border-radius: 35px;
-  /* background-color: #43695e; */
-  width: 40%;
-  padding: 25px;
-
-
+  margin-left: 2rem;
+  width: 45%;
+  padding: 0;
 }
 .progWrapper {
   display: flex;
@@ -136,19 +153,38 @@ progress::-moz-progress-bar {
 
 
 .filter-buttonsForSkills button{ 
-  font-size: 19px;
-  color: #eeede4;
-  padding: 8px 16px;
-  margin: 20px 5px; /* Adjust the margin as needed */
-  border: 1px solid white;
-  background-color: #598553;
-  border-radius: 15px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 0.75rem 1.5rem;
+  margin: 0 0.5rem 1rem 0;
+  border: 1px solid rgba(217, 131, 16, 0.3);
+  background-color: rgba(217, 131, 16, 0.1);
+  border-radius: 12px;
   cursor: pointer;
-  transition: 0.3s ease-in;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
 }
 
 .filter-buttonsForSkills button:hover{
-  background-color: #be7643;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.filter-buttonsForSkills button[data-filter="frontEnd"]:hover{
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.filter-buttonsForSkills button[data-filter="backEnd"]:hover{
+  background-color: var(--secondary-accent);
+  border-color: var(--secondary-accent);
+}
+
+.filter-buttonsForSkills button[data-filter="tools"]:hover{
+  background-color: var(--tertiary-accent);
+  border-color: var(--tertiary-accent);
 }
 
 .skill h3{

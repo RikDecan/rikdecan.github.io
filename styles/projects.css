@@ -1,14 +1,15 @@
 
 .projects{
-
-    height: 1000px;
-    /* background-color: #333; */
-
+    padding: 4rem 0;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .projects h1 {
     text-align: center;
-  }
+    margin-bottom: 4rem;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+}
 
 
   .githubWrapper {
@@ -32,24 +33,72 @@
 
 
   .filter-buttons {
-    text-align: center;
-    margin-bottom: 20px; /* Add some spacing between buttons and other content */
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
   }
   
   .filter-buttons button {
-    font-size: 19px;
-    color: #eeede4;
-    text-decoration: 2px underline;
-    padding: 8px 16px;
-    margin: 0 5px; /* Adjust the margin as needed */
-    border: 0px solid #ccc;
-    background-color: transparent;
-    border-radius: 5px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding: 1rem 2rem;
+    border: 2px solid rgba(50, 140, 193, 0.3);
+    background: linear-gradient(135deg, rgba(50, 140, 193, 0.1), rgba(50, 140, 193, 0.05));
+    border-radius: 50px;
     cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .filter-buttons button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
   }
   
   .filter-buttons button:hover {
-    color: #598553;
+    color: white;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .filter-buttons button:hover::before {
+    left: 100%;
+  }
+
+  .filter-buttons button:nth-child(1):hover {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-color: var(--primary);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .filter-buttons button:nth-child(2):hover {
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    border-color: var(--accent);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .filter-buttons button:nth-child(3):hover {
+    background: linear-gradient(135deg, var(--secondary), #f59e0b);
+    border-color: var(--secondary);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .filter-buttons button:nth-child(4):hover {
+    background: linear-gradient(135deg, #9333ea, #c084fc);
+    border-color: #9333ea;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   }
 
 
@@ -58,29 +107,35 @@ display: none;
 }
 
 .nonFeatured{
-  max-height: 285px;
+  max-height: 350px;
 }
-
-
-
 
   .article22 {
     --img-scale: 1.001;
-    --title-color: #eeede4;
+    --title-color: var(--text-primary);
     --link-icon-translate: -20px;
     --link-icon-opacity: 0;
     position: relative;
-    border-radius: 16px;
-
-    box-shadow: none;background: rgb(55,158,58);
-    background: linear-gradient(235deg, rgba(55,158,58,0.7) 0%, rgba(46,115,61,0.7) 27%, rgba(41,88,63,0.7) 72%, rgba(66,91,71,0.7) 100%);
-
-    /* background-image: url(/sources/images/jeans.jpg);
-    background-size: cover;
-    background-position: center; */
-
-    transition: all 0.4s ease-in-out;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(50, 140, 193, 0.08), rgba(72, 216, 213, 0.05));
+    backdrop-filter: blur(25px);
+    border: 2px solid rgba(50, 140, 193, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     overflow: hidden;
+  }
+  
+  .article22::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
   }
   
   .article22 a::after {
@@ -93,12 +148,17 @@ display: none;
   
   /* basic article elements styling */
   .article22 h2 {
-    margin: 0 0 18px 0;
-    font-family: "Bebas Neue", cursive;
-    font-size: 1.9rem;
-    letter-spacing: 0.06em;
+    margin: 0 0 1rem 0;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     color: var(--title-color);
-    transition: color 0.3s ease-out;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, var(--text-primary), rgba(255, 255, 255, 0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   
   figure {
@@ -106,24 +166,84 @@ display: none;
     padding: 0;
     aspect-ratio: 16 / 9;
     overflow: hidden;
+    border-radius: 20px 20px 0 0;
+    position: relative;
+  }
+  
+  figure::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+    pointer-events: none;
   }
   
   .article22 img {
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     transform-origin: center;
     transform: scale(var(--img-scale));
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   
   .article-body {
-    padding: 24px;
+    padding: 2rem;
+    position: relative;
   }
   
-  .article22 a {
+  .article-body p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+  }
+  
+  .article22 .read-more {
     display: inline-flex;
     align-items: center;
+    gap: 0.5rem;
     text-decoration: none;
-    color: #eeede4;
+    color: var(--primary);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(50, 140, 193, 0.1);
+    border: 2px solid rgba(50, 140, 193, 0.3);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .article22 .read-more::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+  
+  .article22 .read-more:hover {
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary);
+  }
+  
+  .article22 .read-more:hover::before {
+    width: 100%;
+    height: 100%;
   }
   
   .article22 a:focus {
@@ -140,24 +260,38 @@ display: none;
     transition: all 0.3s;
   }
   
-  /* using the has() relational pseudo selector to update our custom properties */
+  /* Enhanced hover effects */
   .article22:has(:hover, :focus) {
-    --img-scale: 1.1;
-    --title-color: #eeede4;
+    --img-scale: 1.08;
+    --title-color: var(--text-primary);
     --link-icon-translate: 0;
     --link-icon-opacity: 1;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   }
 
   .article22:hover{
-      transform: translateY(-8px);
+    transform: translateY(-8px) scale(1.02);
+    background: linear-gradient(135deg, rgba(50, 140, 193, 0.15), rgba(72, 216, 213, 0.1));
+    border-color: rgba(50, 140, 193, 0.4);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+  }
+  
+  .article22:hover::before {
+    opacity: 1;
+  }
 
-      background: linear-gradient(235deg, rgba(55,158,58,0.35) 0%, rgba(46,115,61,0.35) 27%, rgba(41,88,63,0.35) 72%, rgba(66,91,71,0.35) 100%);
-      transition: all 0.3s;
-      
-      -webkit-box-shadow: 0px 10px 0px 0px rgba(64,163,39,0.5);
-      -moz-box-shadow: 0px 10px 0px 0px rgba(64,163,39,0.5);
-      box-shadow: 0px 10px 0px 0px rgba(64,163,39,0.2);
+  .article22.categoryWebDev:hover{
+      border-color: rgba(59, 130, 246, 0.6);
+      box-shadow: 0 25px 50px rgba(59, 130, 246, 0.2);
+  }
+
+  .article22.categoryPrograms:hover{
+      border-color: rgba(16, 185, 129, 0.6);
+      box-shadow: 0 25px 50px rgba(16, 185, 129, 0.2);
+  }
+
+  .article22.categoryOther:hover{
+      border-color: rgba(245, 158, 11, 0.6);
+      box-shadow: 0 25px 50px rgba(245, 158, 11, 0.2);
   }
   
   
@@ -169,45 +303,65 @@ display: none;
   
   .articles {
     display: grid;
-    max-width: 1200px;
+    max-width: 1400px;
     margin-inline: auto;
-    padding-inline: 24px;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 24px;
-    /* background-color: blueviolet; */
+    padding-inline: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2.5rem;
+    align-items: start;
   }
   
-  @media screen and (max-width: 960px) {
-    .article22 {
-      container: card/inline-size;
-      position: relative;
-    
+  @media screen and (max-width: 1200px) {
+    .articles {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
     }
-    figure{
-      display: none;
-    }
-    .article-body p {
-      display: none;
-      font-size: 12px ;
-    }
+  }
 
-    .article22 img{
-      display: none;
+  @media screen and (max-width: 768px) {
+    .projects {
+      padding: 3rem 0;
+    }
+    
+    .articles {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding-inline: 1rem;
+    }
+    
+    .filter-buttons {
+      gap: 0.5rem;
+      margin-bottom: 2rem;
     }
     
     .filter-buttons button {
-      font-size: 15px;
-      color: #eeede4;
-      text-decoration: 1px underline;
-      padding: 8px 16px;
-      margin: 0 5px; /* Adjust the margin as needed */
-      border: 0px solid #ccc;
-      background-color: transparent;
-      border-radius: 5px;
-      cursor: pointer;
+      font-size: 0.85rem;
+      padding: 0.75rem 1.25rem;
     }
     
-  
+    .article22 {
+      border-radius: 20px;
+    }
+    
+    .article-body {
+      padding: 1.5rem;
+    }
+    
+    .article22 h2 {
+      font-size: 1.5rem;
+    }
+    
+    figure {
+      border-radius: 16px 16px 0 0;
+    }
+    
+    .nonFeatured figure {
+      display: none;
+    }
+    
+    .nonFeatured {
+      max-height: none;
+    }
   }
   
   @container card (min-width: 380px) {

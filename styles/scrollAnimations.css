@@ -1,0 +1,222 @@
+/* Scroll Animation Styles */
+
+/* Base animation classes */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-delay: var(--animation-delay, 0s);
+}
+
+.scroll-animate.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Specific animations for different elements */
+.intro.scroll-animate {
+  transform: translateY(60px) scale(0.95);
+}
+
+.intro.scroll-animate.animate-in {
+  transform: translateY(0) scale(1);
+}
+
+.projects.scroll-animate {
+  transform: translateY(40px);
+}
+
+.experience.scroll-animate {
+  transform: translateY(50px);
+}
+
+.recommendations.scroll-animate {
+  transform: translateY(40px);
+}
+
+/* Testimonial cards animation */
+.testimonial-card.scroll-animate {
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-delay: var(--animation-delay, 0s);
+}
+
+.testimonial-card.scroll-animate.animate-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Project cards staggered animation */
+.article22.scroll-animate {
+  opacity: 0;
+  transform: translateY(60px) rotateX(15deg);
+  transition: all 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+  transition-delay: var(--animation-delay, 0s);
+}
+
+.article22.scroll-animate.animate-in {
+  opacity: 1;
+  transform: translateY(0) rotateX(0deg);
+}
+
+/* Timeline items alternating animations */
+.timeline-item:nth-child(odd).scroll-animate {
+  opacity: 0;
+  transform: translateX(-80px) translateY(30px);
+}
+
+.timeline-item:nth-child(even).scroll-animate {
+  opacity: 0;
+  transform: translateX(80px) translateY(30px);
+}
+
+.timeline-item.scroll-animate.animate-in {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-delay: var(--animation-delay, 0s);
+}
+
+/* Progress bars animation */
+.progWrapper.scroll-animate {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.7s ease-out;
+  transition-delay: var(--animation-delay, 0s);
+}
+
+.progWrapper.scroll-animate.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Progress bar fill animation */
+.progWrapper.animate-in progress {
+  animation: fillProgress 1.5s ease-out forwards;
+  animation-delay: calc(var(--animation-delay, 0s) + 0.3s);
+}
+
+@keyframes fillProgress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Wrapper intro special animation */
+.wrapperIntro.scroll-animate {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.wrapperIntro.scroll-animate.animate-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Contact form animation */
+.reachOutWrapper.scroll-animate {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.reachOutWrapper.scroll-animate.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Header scroll effect */
+.header {
+  transition: all 0.3s ease;
+}
+
+.header.scrolled {
+  background: rgba(19, 30, 44, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(50, 140, 193, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Typewriter completion effect - DISABLED */
+/* .typewriter.completed {
+  text-shadow: 0 0 20px rgba(50, 140, 193, 0.5);
+  animation: typewriterGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes typewriterGlow {
+  0% {
+    text-shadow: 0 0 20px rgba(50, 140, 193, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 30px rgba(50, 140, 193, 0.8), 0 0 40px rgba(72, 216, 213, 0.3);
+  }
+} */
+
+/* Counter animation */
+.counter-animate {
+  animation: counterBounce 0.6s ease-out;
+}
+
+@keyframes counterBounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+    color: var(--accent-color);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Hover enhancement for animated elements */
+.animate-in.article22:hover {
+  transform: translateY(-12px) scale(1.02);
+  transition: all 0.3s ease;
+}
+
+.animate-in.timeline-item:hover .timeline-content {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-animate {
+    transition: opacity 0.3s ease;
+    transform: none !important;
+  }
+  
+  .scroll-animate.animate-in {
+    transform: none !important;
+  }
+  
+  /* .typewriter.completed {
+    animation: none;
+  } */
+  
+  .counter-animate {
+    animation: none;
+  }
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .scroll-animate {
+    transform: translateY(30px);
+    transition-duration: 0.6s;
+  }
+  
+  .timeline-item:nth-child(odd).scroll-animate,
+  .timeline-item:nth-child(even).scroll-animate {
+    transform: translateY(30px);
+  }
+  
+  .article22.scroll-animate {
+    transform: translateY(40px);
+  }
+}

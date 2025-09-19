@@ -9,9 +9,12 @@
     <link rel="stylesheet" href="styles/hero.css">
     <link rel="stylesheet" href="styles/intro.css">
     <link rel="stylesheet" href="styles/projects.css">
+    <link rel="stylesheet" href="styles/experience.css">
+    <link rel="stylesheet" href="styles/recommendations.css">
     <link rel="stylesheet" href="styles/carousel.css">
     <link rel="stylesheet" href="styles/contactForm.css">
     <link rel="stylesheet" href="styles/reachOut.css">
+    <link rel="stylesheet" href="styles/scrollAnimations.css">
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -61,7 +64,7 @@
  
     <section class="intro">
 
-        <h1 style="color:#397c99; "><span style="color: #eeede4;">My</span> Background</h1>
+        <h1><span class="accent-blue">My</span> Background</h1>
 
     <div class="wrapperIntro">
         <div id="aboutDirect"></div>
@@ -233,7 +236,7 @@
 
  <section class="projects">
 
-  <h1 style="color:#fa5255; "><span style="color: #eeede4;">Featured</span> Projects</h1>
+  <h1><span class="accent-green">Featured</span> Projects</h1>
 
     <div class="filter-buttons">
         <button onclick="filter('all')">All</button>
@@ -363,7 +366,80 @@
 
 <div class="filler500" style="height: 50px; margin-top: 25px; background-color: transparent;"></div>
 
-<h1 style="color:#bf8700; "><span style="color: #eeede4;">Reach</span> out!</h1>
+<section class="experience">
+  <h1><span class="accent-purple">My</span> Experience</h1>
+  
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">Juli 2025 - Present</div>
+      <div class="timeline-content">
+        <h3>Network Engineer</h3>
+        <h4>AMPLR BV.</h4>
+        <p>Currently working as a Network Engineer, focusing on network infrastructure and optimization.</p>
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-date">Feb 2025 - May 2025</div>
+      <div class="timeline-content">
+        <h3>Network Software Engineer</h3>
+        <h4>AMPLR BV. (Internship)</h4>
+        <p>Completed an intensive internship focusing on network software development and engineering solutions.</p>
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-date">Feb 2022 - Feb 2025</div>
+      <div class="timeline-content">
+        <h3>Freelance Web Developer</h3>
+        <h4>Self-Employed</h4>
+        <p>Provided comprehensive web development services to various clients, specializing in modern web technologies and user experience design.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="filler500" style="height: 75px; margin-top: 50px; background-color: transparent;"></div>
+
+<section class="recommendations">
+  <h1><span class="accent-blue">What Others</span> Say</h1>
+  
+  <div class="testimonials-container">
+    <div class="testimonial-card">
+      <div class="quote-icon">"</div>
+      <div class="testimonial-content">
+        <p>I am pleased to recommend Rik, a young student and developer whose enthusiasm and creativity truly set him apart. Rik has a strong foundation in web development languages such as HTML, CSS, and JavaScript, next to a solid foundation in cross-platform C# .NET development, and has an ability to learn and adapt quickly.</p>
+        <p>Beyond his technical skills, Rik is truly a great communicator. He thrives in collaborative environments, contributing fresh ideas and actively seeking feedback to improve his work.</p>
+      </div>
+      <div class="testimonial-author">
+        <div class="author-info">
+          <h4>Luc Vervoort</h4>
+          <span>Applied IT Lecturer</span>
+          <span class="relationship">Teacher at HOGENT</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="testimonial-card">
+      <div class="quote-icon">"</div>
+      <div class="testimonial-content">
+        <p>Rik is een student die zich kenmerkt door een brede interesse en een solide basis in diverse vakgebieden. Hij slaagde met succes voor alle vakken in het eerste jaar, wat getuigt van zijn toewijding en inzet.</p>
+        <p>Rik viel op door zijn sterke communicatieve vaardigheden. Hij nam actief deel aan discussies, formuleerde heldere argumenten en toonde respect voor de mening van anderen. Ik ben ervan overtuigd dat Rik een waardevolle aanwinst zal zijn in diverse professionele omgevingen.</p>
+      </div>
+      <div class="testimonial-author">
+        <div class="author-info">
+          <h4>Frederiek De Wolf</h4>
+          <span>Opleidingshoofd Graduaten IT</span>
+          <span class="relationship">Teacher at HOGENT</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="filler500" style="height: 75px; margin-top: 50px; background-color: transparent;"></div>
+
+<h1><span class="accent-orange">Reach</span> out!</h1>
 
 <div class="reachOutWrapper">  <!-- reachOutWrapper -->
 <div class="textAndCarousel">
@@ -505,6 +581,7 @@
 <div class="cursor-dot"></div>
 
 
+<script src="scripts/scrollAnimations.js"></script>
 <script src="scripts/cursor.js"></script>
 
 <script src="scripts/sortingProjects.js"></script>

@@ -1,26 +1,55 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 
 * {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: rgba(59, 130, 246, 0.3);
+  color: var(--text-primary);
 }
 body {
+ font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+ font-weight: 400;
+ line-height: 1.6;
 
- font-family: "Jost", sans-serif;
- font-optical-sizing: auto;
- font-weight: 200;
- font-style: normal;
-
-  --dot-bg: #222;
-  --dot-color: #eeede4;
+  --text: #ffffff;
+  --background: #131e2c;
+  --primary: #328cc1;
+  --secondary: #d98310;
+  --accent: #48d8d5;
+  
+  /* Derived colors for consistency */
+  --primary-bg: #131e2c;
+  --secondary-bg: rgba(50, 140, 193, 0.1);
+  --accent-color: #328cc1;
+  --accent-hover: #2a7ba8;
+  --secondary-accent: #48d8d5;
+  --secondary-accent-hover: #3bc5c2;
+  --tertiary-accent: #d98310;
+  --tertiary-accent-hover: #c0740e;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.9);
+  --text-muted: rgba(255, 255, 255, 0.6);
+  --border-color: rgba(255, 255, 255, 0.1);
   --dot-size: 1px;
-  --dot-space: 20px;
-  background:
-    linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-    linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-    var(--dot-color);
+  --dot-space: 24px;
+  
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(50, 140, 193, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(72, 216, 213, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(217, 131, 16, 0.05) 0%, transparent 50%),
+    linear-gradient(90deg, var(--background) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+    linear-gradient(var(--background) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+    var(--background);
 
     
     /* animation: scroll 500s linear infinite; */
@@ -32,40 +61,48 @@ body {
 
 
 p{
-  color: #eeede4;
-  font-weight: 500;
-  font-size: 2vmin;
-  
+  color: var(--text-secondary);
+  font-weight: 400;
+  font-size: clamp(1rem, 2vmin, 1.125rem);
+  line-height: 1.7;
+  margin-bottom: 1rem;
 }
 
   h1 {
-    font-size: 8vmin;
-    color:#eeede4;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(2.5rem, 8vmin, 4rem);
+    color: var(--text);
     text-align: left;
-
-    font-weight: 700;
-    margin: 1rem 0 1rem 2rem;
-    
+    font-weight: 600;
+    margin: 2rem 0 1.5rem 2rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
   }
 
   h2{
-    font-size: 4vmin;
-    color:#eeede4;
-
-
-    font-weight: 700;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(1.5rem, 4vmin, 2.25rem);
+    color: var(--text);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin-bottom: 1rem;
   }
   
   h3{
-    color:#eeede4;
-
+    font-family: "Space Grotesk", sans-serif;
+    color: var(--text-primary);
+    font-size: clamp(1.25rem, 3vmin, 1.5rem);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
   }
 
   
 
 
 
-  /* -#           🖱️CURSOR🖱️              #-  */
+  /* -#           🖱️R🖱️              #-  */
 
 .cursor-dot,
 .cursor-dot-outline {
@@ -82,7 +119,7 @@ p{
 .cursor-dot {
   width: 8px;
   height: 8px;
-  background-color: #eeede4;
+  background-color: white;
   z-index: 9999;
 }
 
@@ -91,16 +128,47 @@ body * {
   cursor: none;
 }
 
-
-
 .cursor-dot-outline {
   width: 40px;
   height: 40px;
-  border: 2px solid rgba(238, 237, 228, 0.5);
+  border: 2px solid white;
   z-index: 9998;
 }
 
 
 .ghThumbNail{
   display: hidden;
+}
+
+/* Colorful accent classes */
+.accent-blue {
+  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), #4a9fd1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.accent-green {
+  color: var(--accent);
+  background: linear-gradient(135deg, var(--accent), #5ee0dd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.accent-orange {
+  color: var(--secondary);
+  background: linear-gradient(135deg, var(--secondary), #e99520);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.accent-purple {
+  color: #9333ea;
+  background: linear-gradient(135deg, #9333ea, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

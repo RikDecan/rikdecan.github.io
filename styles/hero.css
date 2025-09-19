@@ -39,13 +39,6 @@
 
 
 
-
-
-
-
-
-
-
 /* -#-  ⌨️     Typewriter Effect     ⌨️  -#- */
 
 
@@ -62,54 +55,124 @@
   user-select: none;
 
 }
-  
+    /* Typewriter animation with multiple titles */
     @keyframes typing {
-  
-      /*interval 1,1396*/
-  
-      0.0000%, 63.5870% { content: ""; }
-      1.1395%, 62.4474% { content: "F"; }
-      2.2791%, 61.3078% { content: "Fu"; }
-      3.4186%, 60.1682% { content: "Ful"; }
-      4.5581%, 59.0286% { content: "Full"; }
-      5.6977%, 57.8891% { content: "Full-"; }
-      6.8372%, 56.7495% { content: "Full-s"; }
-      7.9767%, 55.6099% { content: "Full-st"; }
-      9.1163%, 54.4704% { content: "Full-sta"; }
-      10.2558%, 53.3308% { content: "Full-stac"; }
-      11.3953%, 52.1913% { content: "Full-stack"; }
-      12.5348%, 51.0517% { content: "Full-stack "; }
-      13.6743%, 49.9122% { content: "Full-stack d"; }
-      14.8138%, 48.7726% { content: "Full-stack de"; }
-      15.9534%, 47.6331% { content: "Full-stack dev"; }
-      /* 17.0929%, 46.493%  { content: "Full-stack deve"; }
-      18.2324%, 45.3540% { content: "Full-stack devel"; }
-      19.3719%, 44.2144% { content: "Full-stack develo"; }
-      20.5114%, 43.0749% { content: "Full-stack develop"; }
-      21.6509%, 41.9353% { content: "Full-stack develope"; }
-      22.7904%, 40.7958% { content: "Full-stack developer"; }
-   */
-  
-      65.2950%, 94.0261% { content: ""; } 
-      66.4319%, 92.8865% { content: "S"; }
-      67.5688%, 91.7469% { content: "Sy"; }
-      68.7057%, 90.6073% { content: "Sys"; }
-      69.8426%, 89.4677% { content: "Syst"; }
-      70.9795%, 88.3281% { content: "Syste"; }
-      72.1164%, 87.1885% { content: "System"; }
-      73.2533%, 86.0489% { content: "System "; }
-      74.3902%, 84.9093% { content: "System A"; }
-      75.5298%, 83.7697% { content: "System Ad"; }
-      76.6694%, 82.6301% { content: "System Adm"; }
-      77.809%, 81.4905%  { content: "System Admi"; }
-      78.9486%, 80.3509% { content: "System Admin"; }
-
-
+      /* Phase 1: Start empty */
+      0% { content: ""; }
+      
+      /* Phase 2: Type "Full-stack developer" */
+      2% { content: "F"; }
+      3% { content: "Fu"; }
+      4% { content: "Ful"; }
+      5% { content: "Full"; }
+      6% { content: "Full-"; }
+      7% { content: "Full-s"; }
+      8% { content: "Full-st"; }
+      9% { content: "Full-sta"; }
+      10% { content: "Full-stac"; }
+      11% { content: "Full-stack"; }
+      12% { content: "Full-stack\00000A d"; }
+      13% { content: "Full-stack\00000A de"; }
+      14% { content: "Full-stack\00000A dev"; }
+      15% { content: "Full-stack\00000A deve"; }
+      16% { content: "Full-stack\00000A devel"; }
+      17% { content: "Full-stack\00000A develo"; }
+      18% { content: "Full-stack\00000A develop"; }
+      19% { content: "Full-stack\00000A develope"; }
+      20% { content: "Full-stack\00000A developer"; }
+      21% { content: "Full-stack\00000A developer"; }
+      
+      /* Phase 3: Pause with full text */
+      21%, 25% { content: "Full-stack\00000A developer"; }
+      
+      /* Phase 4: Erase "Full-stack developer" */
+      26% { content: "Full-stack\00000A develope"; }
+      27% { content: "Full-stack\00000A develop"; }
+      28% { content: "Full-stack\00000A develo"; }
+      29% { content: "Full-stack\00000A devel"; }
+      30% { content: "Full-stack\00000A deve"; }
+      31% { content: "Full-stack\00000A dev"; }
+      32% { content: "Full-stack\00000A de"; }
+      33% { content: "Full-stack\00000A d"; }
+      34% { content: "Full-stack"; }
+      35% { content: "Full-stack"; }
+      36% { content: "Full-stac"; }
+      37% { content: "Full-sta"; }
+      38% { content: "Full-st"; }
+      39% { content: "Full-s"; }
+      40% { content: "Full-"; }
+      41% { content: "Full"; }
+      42% { content: "Ful"; }
+      43% { content: "Fu"; }
+      44% { content: "F"; }
+      45% { content: ""; }
+      
+      /* Phase 5: Type "Homelabber" */
+      46% { content: "H"; }
+      47% { content: "Ho"; }
+      48% { content: "Hom"; }
+      49% { content: "Home"; }
+      50% { content: "Homel"; }
+      51% { content: "Homela"; }
+      52% { content: "Homelab"; }
+      53% { content: "Homelabb"; }
+      54% { content: "Homelabbe"; }
+      55% { content: "Homelabber"; }
+      
+      /* Phase 6: Pause with "Homelabber" */
+      55%, 59% { content: "Homelabber"; }
+      
+      /* Phase 7: Erase "Homelabber" */
+      60% { content: "Homelabbe"; }
+      61% { content: "Homelabb"; }
+      62% { content: "Homelab"; }
+      63% { content: "Homela"; }
+      64% { content: "Homel"; }
+      65% { content: "Home"; }
+      66% { content: "Hom"; }
+      67% { content: "Ho"; }
+      68% { content: "H"; }
+      69% { content: ""; }
+      
+      /* Phase 8: Type "Data analyst" */
+      70% { content: "D"; }
+      71% { content: "Da"; }
+      72% { content: "Dat"; }
+      73% { content: "Data"; }
+      74% { content: "Data\00000A a"; }
+      75% { content: "Data\00000A an"; }
+      76% { content: "Data\00000A ana"; }
+      77% { content: "Data\00000A anal"; }
+      78% { content: "Data\00000A analy"; }
+      79% { content: "Data\00000A analys"; }
+      80% { content: "Data\00000A analyst"; }
+      81% { content: "Data\00000A analyst"; }
+      
+      /* Phase 9: Pause with "Data analyst" */
+      81%, 85% { content: "Data\00000A analyst"; }
+      
+      /* Phase 10: Erase "Data analyst" before loop */
+      86% { content: "Data\00000A analys"; }
+      87% { content: "Data\00000A analy"; }
+      88% { content: "Data\00000A anal"; }
+      89% { content: "Data\00000A ana"; }
+      90% { content: "Data\00000A an"; }
+      91% { content: "Data\00000A a"; }
+      92% { content: "Data"; }
+      93% { content: "Data"; }
+      94% { content: "Dat"; }
+      95% { content: "Da"; }
+      96% { content: "D"; }
+      97% { content: ""; }
+      
+      /* Phase 11: Final pause before loop */
+      97%, 100% { content: ""; }
     }
     
     @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
+      0%, 49% { opacity: 1; }
+      50%, 99% { opacity: 0; }
+      100% { opacity: 1; }
     }
     
     .typewriter {
@@ -117,17 +180,18 @@
       font-family: "Courier Prime", monospace;
       font-weight: 400;
       font-style: normal;
+      white-space: pre-line;
     }
     
     .typewriter::before {
       content: "";
-      animation: typing 13.5s infinite;
+      animation: typing 15s infinite;
     }
     
     .typewriter::after {
       content: "";
-      border-right: 1px solid var(--caret);
-      animation: blink 0.5s linear infinite;
+      border-right: 2px solid var(--caret);
+      animation: blink 1s ease-in-out infinite;
     }
     
     .typewriter.thick::after {
@@ -139,16 +203,16 @@
     }
     
     
+    /* Reduced motion accessibility */
     @media (prefers-reduced-motion) {
       .typewriter::after {
         animation: none;
+        opacity: 1;
       }
       
-  
-    
       .typewriter::before {
-        content: "developer";
-        animation: sequencePopup 12s linear infinite;
+        content: "Data analyst";
+        animation: none;
       }
     }
     
