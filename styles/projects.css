@@ -49,7 +49,7 @@
     border: 2px solid rgba(50, 140, 193, 0.3);
     background: linear-gradient(135deg, rgba(50, 140, 193, 0.1), rgba(50, 140, 193, 0.05));
     border-radius: 50px;
-    cursor: pointer;
+    /* cursor: pointer; */
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     backdrop-filter: blur(20px);
     position: relative;

@@ -98,13 +98,13 @@ progress::-moz-progress-bar {
   background: linear-gradient(90deg, var(--accent-color), var(--secondary-accent));
 }
 
-/* Different colors for different skill categories */
+/* Same orange color for all skill categories */
 .skill[data-category="frontEnd"] progress::-webkit-progress-value {
-  background: linear-gradient(90deg, var(--accent-color), #60a5fa);
+  background: linear-gradient(90deg, var(--tertiary-accent), #fbbf24);
 }
 
 .skill[data-category="backEnd"] progress::-webkit-progress-value {
-  background: linear-gradient(90deg, var(--secondary-accent), #34d399);
+  background: linear-gradient(90deg, var(--tertiary-accent), #fbbf24);
 }
 
 .skill[data-category="tools"] progress::-webkit-progress-value {
@@ -123,6 +123,8 @@ progress::-moz-progress-bar {
   margin-left: 2rem;
   width: 45%;
   padding: 0;
+  height: 600px;
+  position: relative;
 }
 .progWrapper {
   display: flex;
@@ -130,6 +132,22 @@ progress::-moz-progress-bar {
   margin-top: 35px;
   position: relative;
 
+}
+
+.progress-section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 15px;
+}
+
+.skill-name {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 8px;
+  text-align: left;
 }
 
 
@@ -144,7 +162,11 @@ progress::-moz-progress-bar {
 
 .skill.showSkill {
   display: block;
-  /* Andere stijlen voor de kaart */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .skill.hideSkill {
@@ -162,7 +184,7 @@ progress::-moz-progress-bar {
   border: 1px solid rgba(217, 131, 16, 0.3);
   background-color: rgba(217, 131, 16, 0.1);
   border-radius: 12px;
-  cursor: pointer;
+  /* cursor: pointer; */
   transition: all 0.2s ease;
   backdrop-filter: blur(10px);
 }
@@ -173,13 +195,13 @@ progress::-moz-progress-bar {
 }
 
 .filter-buttonsForSkills button[data-filter="frontEnd"]:hover{
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
+  background-color: var(--tertiary-accent);
+  border-color: var(--tertiary-accent);
 }
 
 .filter-buttonsForSkills button[data-filter="backEnd"]:hover{
-  background-color: var(--secondary-accent);
-  border-color: var(--secondary-accent);
+  background-color: var(--tertiary-accent);
+  border-color: var(--tertiary-accent);
 }
 
 .filter-buttonsForSkills button[data-filter="tools"]:hover{
