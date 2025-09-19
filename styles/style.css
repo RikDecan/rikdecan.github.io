@@ -83,39 +83,21 @@ p{
   width: 8px;
   height: 8px;
   background-color: #eeede4;
-
-
-
-  /*verrander dit als je klaar bent met alles*/
-  display: none;
-
+  z-index: 9999;
 }
 
-
-
-
-  /*verrander dit als je klaar bent met alles*/
-
-
-/*  
-  html *,
-  body * {
-    cursor: none;
-  }
-   */
+html *,
+body * {
+  cursor: none;
+}
 
 
 
 .cursor-dot-outline {
   width: 40px;
   height: 40px;
-  /* background-color: rgba(238, 237, 228, 0.5);  */
   border: 2px solid rgba(238, 237, 228, 0.5);
-
-
-  /*verrander dit als je klaar bent met alles*/
-  display: none;
-
+  z-index: 9998;
 }
 
 

@@ -15,10 +15,6 @@
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <!-- <link rel="stylesheet" href="http://lengthylyova.pythonanywhere.com/static/gh-contrib-graph/gh.css"> -->
-
-    <link rel="stylesheet" href="styles/githubContrStyle.css">
-
 
 </head>
 <body>
@@ -239,16 +235,6 @@
 
   <h1 style="color:#fa5255; "><span style="color: #eeede4;">Featured</span> Projects</h1>
 
-
-    <div class="githubWrapper">
-    <div id="gh" data-login="RikDecan"></div>
-    </div>
-
-
-
-<div class="underGhWrapper"> 
-
-
     <div class="filter-buttons">
         <button onclick="filter('all')">All</button>
         <button onclick="filter('categoryWebDev')">Web Dev</button>
@@ -256,8 +242,6 @@
         <button onclick="filter('categoryOther')">Other</button>
       </div>
 
-
-</div>
 <section class="articles">
 
 
@@ -377,7 +361,6 @@
 
 </section>
 
-
 <div class="filler500" style="height: 50px; margin-top: 25px; background-color: transparent;"></div>
 
 <h1 style="color:#bf8700; "><span style="color: #eeede4;">Reach</span> out!</h1>
@@ -454,30 +437,36 @@
 <!-- END Logos Infinite carousel -->
 </div>
  <div class="form-container">
-  <form class="form" action="https://api.web3forms.com/submit" method="POST">
+  <form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
     <input type="hidden" name="access_key" value="92688ca9-27dd-4304-a4f3-30b00de5ef7a">
-
+    <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio">
+    <input type="hidden" name="from_name" value="Portfolio Contact Form">
+    
+    <!-- Honeypot field to prevent spam -->
+    <input type="checkbox" name="botcheck" id="" style="display: none;">
 
     <div class="form-group">
       <label for="email"></label>
-      <input type="email" id="email" name="email" required="" placeholder="Email">
+      <input type="email" id="email" name="email" required="" placeholder="Email" maxlength="100">
     </div>
 
     <div class="form-group">
       <label for="name"></label>
-      <input type="text" id="name" name="name" required="" placeholder="Name">
+      <input type="text" id="name" name="name" required="" placeholder="Name" maxlength="50">
     </div>
 
     <div class="form-group">
       <label for="textarea"></label>
-      <textarea name="message" id="textarea" rows="10" cols="50" required="" placeholder="Whats up?"></textarea>
+      <textarea name="message" id="textarea" rows="10" cols="50" required="" placeholder="Whats up?" maxlength="500"></textarea>
     </div>
      
-
-    
-  
-    <button class="form-submit-btn" type="submit">Submit</button>
+    <button class="form-submit-btn" type="submit" id="submit-btn">
+      <span id="btn-text">Submit</span>
+      <span id="btn-loading" style="display: none;">Sending...</span>
+    </button>
   </form>
+  
+  <div id="form-message" style="display: none; margin-top: 20px; padding: 15px; border-radius: 5px; text-align: center;"></div>
 </div>
 
 
@@ -516,12 +505,6 @@
 <div class="cursor-dot"></div>
 
 
-<!-- <script src="http://lengthylyova.pythonanywhere.com/static/gh-contrib-graph/gh.js"></script> -->
-
-<!-- <script src="https://temp.staticsave.com/664481e24996f.js"></script> -->
-
-<script src="scripts/githubContr.js"></script>
-
 <script src="scripts/cursor.js"></script>
 
 <script src="scripts/sortingProjects.js"></script>
@@ -538,6 +521,7 @@
 
 <script src="scripts/userStats.js"></script>
 
+<script src="scripts/contactForm.js"></script>
 
 </body>
 

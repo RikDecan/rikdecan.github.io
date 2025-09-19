@@ -10,6 +10,12 @@ var cursor = {
     $outline: document.querySelector('.cursor-dot-outline'),
     
     init: function() {
+        // Check if cursor elements exist
+        if (!this.$dot || !this.$outline) {
+            console.warn('Cursor elements not found');
+            return;
+        }
+        
         // Set up element sizes
         this.dotSize = this.$dot.offsetWidth;
         this.outlineSize = this.$outline.offsetWidth;
@@ -18,21 +24,19 @@ var cursor = {
         this.animateDotOutline();
     },
     
-//     updateCursor: function(e) {
-//         var self = this;
+    updateCursor: function(e) {
+        var self = this;
         
-//         console.log(e)
-        
-//         // Show the cursor
-//         self.cursorVisible = true;
-//         self.toggleCursorVisibility();
+        // Show the cursor
+        self.cursorVisible = true;
+        self.toggleCursorVisibility();
 
-//         // Position the dot
-//         self.endX = e.pageX;
-//         self.endY = e.pageY;
-//         self.$dot.style.top = self.endY + 'px';
-//         self.$dot.style.left = self.endX + 'px';
-//     },
+        // Position the dot
+        self.endX = e.pageX;
+        self.endY = e.pageY;
+        self.$dot.style.top = self.endY + 'px';
+        self.$dot.style.left = self.endX + 'px';
+    },
     
     setupEventListeners: function() {
         var self = this;
@@ -62,15 +66,7 @@ var cursor = {
   
   
         document.addEventListener('mousemove', function(e) {
-            // Show the cursor
-            self.cursorVisible = true;
-            self.toggleCursorVisibility();
-
-            // Position the dot
-            self.endX = e.pageX;
-            self.endY = e.pageY;
-            self.$dot.style.top = self.endY + 'px';
-            self.$dot.style.left = self.endX + 'px';
+            self.updateCursor(e);
         });
         
         // Hide/show cursor
