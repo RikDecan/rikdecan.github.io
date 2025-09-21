@@ -70,7 +70,7 @@
   .filter-buttons button:hover {
     color: white;
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); */
   }
   
   .filter-buttons button:hover::before {
@@ -78,27 +78,27 @@
   }
 
   .filter-buttons button:nth-child(1):hover {
-    background: linear-gradient(135deg, var(--primary), var(--accent));
+    /* background: linear-gradient(135deg, var(--primary), var(--accent)); */
     border-color: var(--primary);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); */
   }
 
   .filter-buttons button:nth-child(2):hover {
-    background: linear-gradient(135deg, var(--accent), var(--primary));
-    border-color: var(--accent);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    /* background: linear-gradient(135deg, var(--accent), var(--primary)); */
+    border-color: var(--primary);
+    /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); */
   }
 
   .filter-buttons button:nth-child(3):hover {
-    background: linear-gradient(135deg, var(--secondary), #f59e0b);
-    border-color: var(--secondary);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    /* background: linear-gradient(135deg, var(--secondary), #f59e0b); */
+    border-color: var(--primary);
+    /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); */
   }
 
   .filter-buttons button:nth-child(4):hover {
-    background: linear-gradient(135deg, #9333ea, #c084fc);
-    border-color: #9333ea;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    /* background: linear-gradient(135deg, #9333ea, #c084fc); */
+    border-color: var(--primary);
+    /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); */
   }
 
 
@@ -120,9 +120,12 @@ display: none;
     background: linear-gradient(135deg, rgba(50, 140, 193, 0.08), rgba(72, 216, 213, 0.05));
     backdrop-filter: blur(25px);
     border: 2px solid rgba(50, 140, 193, 0.15);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12); */
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
   
   .article22::before {
@@ -193,6 +196,9 @@ display: none;
   .article-body {
     padding: 2rem;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
   
   .article-body p {
@@ -200,6 +206,7 @@ display: none;
     line-height: 1.6;
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
+    flex-grow: 1;
   }
   
   .article22 .read-more {
@@ -227,7 +234,7 @@ display: none;
     left: 50%;
     width: 0;
     height: 0;
-    background: linear-gradient(45deg, var(--primary), var(--accent));
+    background: none;
     transition: all 0.3s ease;
     border-radius: 50px;
     transform: translate(-50%, -50%);
@@ -237,7 +244,7 @@ display: none;
   .article22 .read-more:hover {
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); */
     border-color: var(--primary);
   }
   
@@ -272,7 +279,7 @@ display: none;
     transform: translateY(-8px) scale(1.02);
     background: linear-gradient(135deg, rgba(50, 140, 193, 0.15), rgba(72, 216, 213, 0.1));
     border-color: rgba(50, 140, 193, 0.4);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2); */
   }
   
   .article22:hover::before {
@@ -281,17 +288,17 @@ display: none;
 
   .article22.categoryWebDev:hover{
       border-color: rgba(59, 130, 246, 0.6);
-      box-shadow: 0 25px 50px rgba(59, 130, 246, 0.2);
+      /* box-shadow: 0 25px 50px rgba(59, 130, 246, 0.2); */
   }
 
   .article22.categoryPrograms:hover{
       border-color: rgba(16, 185, 129, 0.6);
-      box-shadow: 0 25px 50px rgba(16, 185, 129, 0.2);
+      /* box-shadow: 0 25px 50px rgba(16, 185, 129, 0.2); */
   }
 
   .article22.categoryOther:hover{
       border-color: rgba(245, 158, 11, 0.6);
-      box-shadow: 0 25px 50px rgba(245, 158, 11, 0.2);
+      /* box-shadow: 0 25px 50px rgba(245, 158, 11, 0.2); */
   }
   
   
@@ -308,7 +315,7 @@ display: none;
     padding-inline: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2.5rem;
-    align-items: start;
+    align-items: stretch;
   }
   
   @media screen and (max-width: 1200px) {
@@ -330,13 +337,35 @@ display: none;
     }
     
     .filter-buttons {
-      gap: 0.5rem;
+      gap: 0.8rem;
       margin-bottom: 2rem;
+      flex-direction: column;
+      align-items: center;
     }
     
     .filter-buttons button {
-      font-size: 0.85rem;
-      padding: 0.75rem 1.25rem;
+      font-size: 0.9rem;
+      padding: 1rem 2rem; /* Better touch targets */
+      min-width: 120px;
+      min-height: 48px; /* Standard mobile touch target */
+      border-radius: 25px;
+      font-weight: 600;
+    }
+    
+    .filter-buttons button:active {
+      transform: scale(0.95);
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+    }
+    
+    /* Hide filter buttons on mobile for cleaner interface */
+    .filter-buttons {
+      display: none;
+    }
+    
+    /* Show only first 3 projects on mobile */
+    .article22:nth-child(n+4) {
+      display: none;
     }
     
     .article22 {
@@ -393,4 +422,107 @@ display: none;
     position: absolute;
     white-space: nowrap; 
     width: 1px;
+  }
+
+  /* GitHub CTA Button */
+  .github-cta-container {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+  }
+
+  .github-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    /* background: linear-gradient(135deg, var(--primary), var(--accent)); */
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .github-cta-button:hover {
+    transform: translateY(-2px);
+    /* box-shadow: 0 12px 40px rgba(50, 140, 193, 0.2); */
+    /* background: linear-gradient(135deg, var(--accent), var(--primary)); */
+  }
+
+  .github-cta-button .github-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .github-cta-button .arrow-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  .github-cta-button:hover .arrow-icon {
+    transform: translateX(4px);
+  }
+
+  /* GitHub CTA Button Responsiveness */
+  @media screen and (max-width: 768px) {
+    .github-cta-container {
+      margin: 2rem 0;
+      padding: 0 1rem;
+    }
+    
+    .github-cta-button {
+      font-size: 1rem;
+      padding: 0.85rem 1.5rem;
+      gap: 0.6rem;
+    }
+    
+    .github-cta-button .github-icon {
+      width: 20px;
+      height: 20px;
+    }
+    
+    .github-cta-button .arrow-icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    /* Keep filter buttons hidden on small mobile too */
+    .filter-buttons {
+      display: none !important;
+    }
+    
+    /* Ensure only 3 projects show on very small screens */
+    .article22:nth-child(n+4) {
+      display: none !important;
+    }
+    
+    .github-cta-container {
+      margin: 1.5rem 0;
+    }
+    
+    .github-cta-button {
+      font-size: 0.9rem;
+      padding: 1rem 1.5rem; /* Increased for better mobile touch */
+      gap: 0.5rem;
+      min-height: 48px;
+    }
+    
+    .github-cta-button .github-icon {
+      width: 18px;
+      height: 18px;
+    }
+    
+    .github-cta-button .arrow-icon {
+      width: 16px;
+      height: 16px;
+    }
   }

@@ -117,8 +117,8 @@ p{
 }
 
 .cursor-dot {
-  width: 4px;
-  height: 4px;
+  width: 8px;
+  height: 8px;
   background-color: white;
   z-index: 9999;
 }
@@ -129,9 +129,9 @@ body * {
 }
 
 .cursor-dot-outline {
-  width: 12px;
-  height: 12px;
-  border: 1.5px solid white;
+  width: 30px;
+  height: 30px;
+  border: 2px solid white;
   z-index: 9998;
 }
 
@@ -165,10 +165,140 @@ body * {
   background-clip: text;
 }
 
-.accent-purple {
-  color: #9333ea;
-  background: linear-gradient(135deg, #9333ea, #c084fc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Global Responsive Design */
+
+/* Tablet styles (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: rgba(72, 216, 213, 0.2);
+  }
+  
+  body {
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .divider {
+    height: 50px !important;
+  }
+  
+  /* Hide custom cursor on touch devices */
+  .cursor-dot,
+  .cursor-dot-outline {
+    display: none;
+  }
+  
+  html *,
+  body * {
+    cursor: auto;
+  }
+  
+  /* Better touch feedback */
+  a:active, button:active {
+    opacity: 0.7;
+    transition: opacity 0.1s ease;
+  }
+}
+
+/* Mobile styles (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px; /* Better for mobile readability */
+    line-height: 1.6; /* Improved line spacing */
+    -webkit-text-size-adjust: 100%; /* Prevent zoom on iOS */
+  }
+  
+  section {
+    padding: 3rem 1.5rem; /* More generous padding */
+    scroll-margin-top: 80px; /* Account for fixed header */
+  }
+  
+  .divider {
+    height: 40px !important;
+  }
+  
+  /* Typography scaling for mobile */
+  h1 {
+    font-size: clamp(2rem, 7vw, 2.8rem) !important;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  
+  h2 {
+    font-size: clamp(1.5rem, 5.5vw, 2.2rem) !important;
+    line-height: 1.3;
+    margin-bottom: 1.2rem;
+  }
+  
+  h3 {
+    font-size: clamp(1.2rem, 4.5vw, 1.7rem) !important;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1rem; /* Improved mobile readability */
+    line-height: 1.7; /* Better line spacing for reading */
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Enhanced touch targets */
+  a, button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Small mobile styles (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 15px; /* Still readable on small screens */
+    padding: 0 0.5rem; /* Prevent content from touching edges */
+  }
+  
+  section {
+    padding: 2.5rem 1rem; /* Balanced spacing */
+    scroll-margin-top: 90px;
+  }
+  
+  .divider {
+    height: 30px !important;
+  }
+  
+  h1 {
+    font-size: clamp(1.7rem, 8vw, 2.2rem) !important;
+    margin-bottom: 1rem;
+    text-align: center; /* Center on very small screens */
+  }
+  
+  h2 {
+    font-size: clamp(1.3rem, 6.5vw, 1.8rem) !important;
+    margin-bottom: 0.8rem;
+    text-align: center;
+  }
+  
+  h3 {
+    font-size: clamp(1.1rem, 5.5vw, 1.4rem) !important;
+    margin-bottom: 0.7rem;
+  }
+  
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.3rem;
+    text-align: left; /* Keep body text left-aligned for readability */
+  }
+  
+  /* Larger touch targets for very small screens */
+  a, button {
+    min-height: 48px;
+    padding: 0.8rem 1.2rem;
+  }
 }

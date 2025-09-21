@@ -162,13 +162,21 @@
 
   .header{
     position: fixed;
-    max-height: 55px;
-
+    max-height: 65px; /* Increased for better touch targets */
+    padding: 0 1rem;
+    z-index: 10000;
   }
 
   .icons{
     display: inline-flex;
     top: 0;
+    padding: 0.5rem; /* Better touch target */
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .icons:active {
+    background-color: rgba(255, 255, 255, 0.1);
   }
   
   #check:checked~.icons #menu-icon {
@@ -189,12 +197,13 @@
       left: 0;
       width: 100%;
       height: 0;
-      background: rgba(89, 133, 83, 0.35); /*kleur van de backdrop menu op mobile*/
-      backdrop-filter: blur(50px);
-      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .10); /*.1 is een achtergrond*/
+      background: rgba(19, 30, 44, 0.95); /* Darker, more professional mobile menu */
+      backdrop-filter: blur(25px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
       overflow: hidden;
-      transition: .3s ease; /*aanpassen hoe lang de animatie duurt*/
-      max-height: 225px;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      max-height: 300px; /* Increased for better spacing */
+      border-radius: 0 0 20px 20px;
     }
 
     
@@ -206,13 +215,36 @@
     .navbar a {
       display: block;
       font-size: 1.1rem;
-      margin: 1.5rem 0;
+      margin: 0.5rem 1rem;
+      padding: 1rem 2rem; /* Better touch targets */
       text-align: center;
       transform: translateY(-50px);
       opacity: 0;
-      transition: .3s ease;    
+      transition: all 0.3s ease;    
       border-bottom: none;
-      margin-right: 45px;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .navbar a:active {
+      background-color: rgba(72, 216, 213, 0.1);
+      transform: translateY(0) scale(0.98);
+    }
+    
+    .navbar a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(72, 216, 213, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .navbar a:hover::before {
+      left: 100%;
     }
 
     #check:checked~.navbar a{

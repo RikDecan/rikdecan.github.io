@@ -3,6 +3,8 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 15px 55px 55px 55px;
+    align-items: flex-start;
+    gap: 2rem;
 }
 
 .textAndCarousel{
@@ -26,16 +28,100 @@
 
 
 
-/* Media query for smaller screens */
-@media only screen and (max-width: 768px) {
-    .textAndCarousel article p{
-        font-size: 16px;           
-    } 
-    .textAndCarousel article{
+/* Responsive Design for Reach Out Section */
+
+/* Tablet styles (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    .reachOutWrapper {
+        flex-direction: column;
+        gap: 2rem;
+        margin: 2rem 2rem;
+        padding: 0;
+    }
+    
+    .textAndCarousel {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .textAndCarousel article {
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+}
+
+/* Mobile styles (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .reachOutWrapper {
+        margin: 1rem;
+        padding: 0;
+        gap: 2rem;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        width: 400px;
-        margin-left: 50px ;
-        padding: 25px;
+    }
+    
+    .textAndCarousel {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .textAndCarousel article {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 1.5rem;
+        text-align: center;
+    }
+    
+    .textAndCarousel article p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+}
+
+/* Small mobile styles (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .reachOutWrapper {
+        margin: 0.5rem;
+        padding: 0;
+        gap: 1.5rem;
+    }
+    
+    .textAndCarousel article {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 1rem 0.5rem;
+    }
+    
+    .textAndCarousel article p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+}
+
+/* Additional mobile layout for form positioning */
+@media screen and (max-width: 768px) {
+    section.reachOut {
+        padding: 2rem 1rem;
+    }
+    
+    /* Ensure form container gets proper spacing within mobile layout */
+    .form-container {
+        margin: 2rem auto;
+        max-width: calc(100vw - 2rem);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    section.reachOut {
+        padding: 1.5rem 0.5rem;
+    }
+    
+    .form-container {
+        margin: 1.5rem auto;
+        max-width: calc(100vw - 1rem);
     }
 }
